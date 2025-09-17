@@ -30,6 +30,7 @@
           name="subscription"
           label="Subscription Tier"
           :options="subscriptionOptions"
+          version="v1"
         />
         <div class="mt-4 text-sm text-gray-600">
           Selected: {{ subscriptionTier }}
@@ -44,6 +45,7 @@
           name="options"
           label="Checkbox Options"
           :options="checkboxOptions"
+          version="v1"
         />
         <div class="mt-4 text-sm text-gray-600">
           Selected: {{ selectedOptions.join(', ') || 'None' }}
@@ -102,27 +104,32 @@ interface CheckboxOption {
     text: string
     variant?: 'blue' | 'gray'
   }>
+  version: string
 }
 
 const checkboxOptions: CheckboxOption[] = [
   {
     value: 'show-username',
-    label: 'Show fan\'s username on your post'
+    label: 'Show fan\'s username on your post',
+    version: 'v1'
   },
   {
     value: 'legal-disclaimer',
     label: 'I have verified, preserved and currently hold all identification cards and documents required under Record Keeping Requirements, 18 U.S.C. 2257 and 28 C.F.R. 75, or applicable laws in any other jurisdictions, countries, and territories ("2257 documentation"), for all individuals appearing in the Content.',
-    description: 'Legal requirement for content creators'
+    description: 'Legal requirement for content creators',
+    version: 'v1'
   },
   {
     value: 'silver-tier',
     label: 'Silver tier',
-    tags: [{ text: 'Published Tier', variant: 'blue' }]
+    tags: [{ text: 'Published Tier', variant: 'blue' }],
+    version: 'v1'
   },
   {
     value: 'new-test-tier',
     label: 'New test tier',
-    tags: [{ text: 'Draft', variant: 'gray' }]
+    tags: [{ text: 'Draft', variant: 'gray' }],
+    version: 'v1'
   }
 ]
 

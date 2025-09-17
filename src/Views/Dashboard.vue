@@ -37,6 +37,7 @@
           name="transfer-type"
           label="Select Transfer Type"
           :options="transferTypeOptions"
+          version="v1"
         />
       </div>
 
@@ -48,6 +49,7 @@
           name="transfer-options"
           label="Additional Options"
           :options="transferOptionsList"
+          version="v1"
         />
       </div>
 
@@ -159,22 +161,26 @@ const transferOptionsList = [
   {
     value: 'save-recipient',
     label: 'Save Recipient Details',
-    description: 'Store this recipient for future transfers'
+    description: 'Store this recipient for future transfers',
+    version: 'v1'
   },
   {
     value: 'email-notification',
     label: 'Email Notification',
-    description: 'Send confirmation email to recipient'
+    description: 'Send confirmation email to recipient',
+    version: 'v1'
   },
   {
     value: 'sms-notification',
     label: 'SMS Notification',
-    tags: [{ text: 'Premium', variant: 'blue' as const }]
+    tags: [{ text: 'Premium', variant: 'blue' as const }],
+    version: 'v1'
   },
   {
     value: 'tracking',
     label: 'Transfer Tracking',
-    tags: [{ text: 'New', variant: 'gray' as const }]
+    tags: [{ text: 'New', variant: 'gray' as const }],
+    version: 'v1'
   }
 ]
 
