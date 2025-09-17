@@ -2,24 +2,32 @@
   <div class="bg-white text-text p-2 max-w-7xl mx-auto dark:bg-black">
     <div class="flex flex-col gap-10 dark:bg-black">
       <section class="flex flex-col gap-6">
-
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Auth Demo components</h1>
           <AuthDemo />
         </section>
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Paragraph demo component</h1>
           <div>
-            <Paragraph text="Hello, this is a styled paragraph component." font-size="text-lg"
-              font-weight="font-semibold" font-color="text-gray-700 dark:text-gray-200" shadow="shadow-sm"
-              :left-icon="PaperClipIcon" />
+            <Paragraph
+              text="Hello, this is a styled paragraph component."
+              font-size="text-lg"
+              font-weight="font-semibold"
+              font-color="text-gray-700 dark:text-gray-200"
+              shadow="shadow-sm"
+              :left-icon="PaperClipIcon"
+            />
           </div>
           <div>
-            <Paragraph text="This is another paragraph component." font-size="text-sm" font-weight="font-normal"
-              font-color="text-blue-800 dark:text-gray-200" />
+            <Paragraph
+              text="This is another paragraph component."
+              font-size="text-sm"
+              font-weight="font-normal"
+              font-color="text-blue-800 dark:text-gray-200"
+            />
           </div>
         </section>
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Heading demo component</h1>
           <div>
             <Heading text="Dashboard h1 heading" tag="h1" theme="defaultPrimaryHeading" />
@@ -34,188 +42,346 @@
             <Heading text="This is a Section h1 heading" tag="h1" theme="sectionHeading" />
           </div>
         </section>
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Button demo component</h1>
           <div><Button text="Save" variant="success" size="lg" /></div>
           <div><Button text="Delete" variant="danger" size="sm" /></div>
-          <div><Button text="With Icon" :left-icon="PaperClipIcon" variant="secondary" size="md" /></div>
+          <div>
+            <Button text="With Icon" :left-icon="PaperClipIcon" variant="secondary" size="md" />
+          </div>
           <div><Button text="More Info" variant="outline" size="md" /></div>
         </section>
 
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Default demo components in single Input</h1>
           <div>
             <h3 class="text-xl font-bold mb-4">Check Box</h3>
-            <InputDefaultComponent id="checkbox" type="checkbox" show-label label-text="Agree to terms" :radio-options="[{ label: 'Show fan\'s username on your post', value: true }, { label: 'I have verified, preserved and currently hold all identification cards and documents required under Record Keeping Requirements, 18 U.S.C. 2257 and 28 C.F.R. 75, or applicable laws in any other jurisdictions, countries, and territories, for all individuals appearing in the Content.', value: true, },
-            { label: 'Silver tier', value: true, badge: true, badgeText: 'Published Tier' }
-            ]" />
-
+            <InputDefaultComponent
+              id="checkbox"
+              type="checkbox"
+              show-label
+              label-text="Agree to terms"
+              :radio-options="[
+                { label: 'Show fan\'s username on your post', value: true },
+                {
+                  label:
+                    'I have verified, preserved and currently hold all identification cards and documents required under Record Keeping Requirements, 18 U.S.C. 2257 and 28 C.F.R. 75, or applicable laws in any other jurisdictions, countries, and territories, for all individuals appearing in the Content.',
+                  value: true,
+                },
+                { label: 'Silver tier', value: true, badge: true, badgeText: 'Published Tier' },
+              ]"
+            />
           </div>
           <div>
             <h3 class="text-xl font-bold mb-4">Radio Box</h3>
-            <InputDefaultComponent id="radiobox" type="radio" show-label label-text="Subscription Tier"
-              :radio-options="[{ label: 'Choice A', value: 'A' }, { label: 'Choice B', value: 'B' }, { label: 'Choice C', value: 'C' }]" />
+            <InputDefaultComponent
+              id="radiobox"
+              type="radio"
+              show-label
+              label-text="Subscription Tier"
+              :radio-options="[
+                { label: 'Choice A', value: 'A' },
+                { label: 'Choice B', value: 'B' },
+                { label: 'Choice C', value: 'C' },
+              ]"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
             <h3 class="text-xl font-bold mb-4">Input Box</h3>
-            <InputDefaultComponent id="input" type="text" placeholder="Enter your name" show-label v-model="name"
+            <InputDefaultComponent
+              id="input"
+              type="text"
+              placeholder="Enter your name"
+              show-label
+              v-model="name"
               label-text="Text input with description"
-              description="Please enter your full name as it appears on your ID" />
+              description="Please enter your full name as it appears on your ID"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_1" type="text" placeholder="This is a required field" show-label
-              v-model="name" label-text="Required Input" requiredDisplay="*" />
-
+            <InputDefaultComponent
+              id="input_1"
+              type="text"
+              placeholder="This is a required field"
+              show-label
+              v-model="name"
+              label-text="Required Input"
+              requiredDisplay="*"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_2" type="text" placeholder="Input with left icon" show-label v-model="name"
-              label-text="Input with left Icon" :left-icon="EnvelopeIcon" />
-
+            <InputDefaultComponent
+              id="input_2"
+              type="text"
+              placeholder="Input with left icon"
+              show-label
+              v-model="name"
+              label-text="Input with left Icon"
+              :left-icon="EnvelopeIcon"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_3" type="text" placeholder="Input with right icon" show-label
-              v-model="name" label-text="Input with right Icon" :right-icon="EyeIcon" />
+            <InputDefaultComponent
+              id="input_3"
+              type="text"
+              placeholder="Input with right icon"
+              show-label
+              v-model="name"
+              label-text="Input with right Icon"
+              :right-icon="EyeIcon"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_4" type="text" placeholder="Enter discount code" show-label v-model="name"
-              label-text="Input with Optional text" isOptional />
+            <InputDefaultComponent
+              id="input_4"
+              type="text"
+              placeholder="Enter discount code"
+              show-label
+              v-model="name"
+              label-text="Input with Optional text"
+              isOptional
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_5" type="number" placeholder="Enter Discount percentage" show-label
-              v-model="name" label-text="Input with Right Span Text" rightSpan :rightSpanText="'% off'" />
+            <InputDefaultComponent
+              id="input_5"
+              type="number"
+              placeholder="Enter Discount percentage"
+              show-label
+              v-model="name"
+              label-text="Input with Right Span Text"
+              rightSpan
+              :rightSpanText="'% off'"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_6" type="number" placeholder="Monthly Price" show-label leftSpan
-              :leftSpanText="'USD$'" v-model="name" label-text="Input with Right Span Text & Left Span Text" rightSpan
-              :rightSpanText="'/mo'" :rightSpanClass="'text-slate-500'" />
+            <InputDefaultComponent
+              id="input_6"
+              type="number"
+              placeholder="Monthly Price"
+              show-label
+              leftSpan
+              :leftSpanText="'USD$'"
+              v-model="name"
+              label-text="Input with Right Span Text & Left Span Text"
+              rightSpan
+              :rightSpanText="'/mo'"
+              :rightSpanClass="'text-slate-500'"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_7" type="textarea" placeholder="Enter multiline text" show-label
-              v-model="name" label-text="Input with Type Text Area" description="30/200 characters" />
+            <InputDefaultComponent
+              id="input_7"
+              type="textarea"
+              placeholder="Enter multiline text"
+              show-label
+              v-model="name"
+              label-text="Input with Type Text Area"
+              description="30/200 characters"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputDefaultComponent id="input_8" type="textarea" placeholder="Enter multiline text" show-label
-              richTextEditor v-model:content="name" label-text="Textarea with Quills library"
-              description="30/200 characters" />
+            <InputDefaultComponent
+              id="input_8"
+              type="textarea"
+              placeholder="Enter multiline text"
+              show-label
+              richTextEditor
+              v-model:content="name"
+              label-text="Textarea with Quills library"
+              description="30/200 characters"
+            />
           </div>
         </section>
 
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2 ">
-          <h1 class="text-3xl font-bold mb-4">Dashboard components</h1>
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
+          <h1 class="text-2xl font-semibold mb-4">Form components with Dashboard Style</h1>
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_a" placeholder="Enter username" show-label v-model="name"
+            <InputComponentDashbaord
+              id="input_a"
+              placeholder="Enter username"
+              show-label
+              v-model="name"
               label-text="Username"
-              description="Usernames cannot be changed after your first month, but special circumstances may allow for exceptions. Please contact us if you need assistance with changing your username." />
+              description="Usernames cannot be changed after your first month, but special circumstances may allow for exceptions. Please contact us if you need assistance with changing your username."
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_b" placeholder="Enter username..." show-label v-model="name"
+            <InputComponentDashbaord
+              id="input_b"
+              placeholder="Enter username..."
+              show-label
+              v-model="name"
               label-text="Username"
               description="Usernames cannot be changed after your first month, but special circumstances may allow for exceptions. Please contact us if you need assistance with changing your username."
-              requiredDisplay="required-text-error" showErrors :errors="[
+              requiredDisplay="required-text-error"
+              showErrors
+              :errors="[
                 {
                   error: 'Must be between 3 and 100 characters long',
-                  icon: InformationCircleIcon
+                  icon: InformationCircleIcon,
                 },
                 {
                   error: 'Can contain any letters from a-z, any numbers from 0-9.',
-                  icon: InformationCircleIcon
+                  icon: InformationCircleIcon,
                 },
                 {
                   error: 'Cannot contain space.',
-                  icon: InformationCircleIcon
+                  icon: InformationCircleIcon,
                 },
                 {
                   error: 'Sorry, username \'minimay\' is taken',
-                  icon: InformationCircleIcon
-                }
-              ]" />
+                  icon: InformationCircleIcon,
+                },
+              ]"
+            />
           </div>
 
-
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_b" placeholder="Enter username..." show-label v-model="name"
+            <InputComponentDashbaord
+              id="input_b"
+              placeholder="Enter username..."
+              show-label
+              v-model="name"
               label-text="Username"
               description="Usernames cannot be changed after your first month, but special circumstances may allow for exceptions. Please contact us if you need assistance with changing your username."
-              onSuccess :success="[
+              onSuccess
+              :success="[
                 {
                   message: 'Must be between 3 and 100 characters long',
-                  icon: CheckIcon
+                  icon: CheckIcon,
                 },
                 {
                   message: 'Can contain any letters from a-z, any numbers from 0-9.',
-                  icon: CheckIcon
+                  icon: CheckIcon,
                 },
                 {
                   message: 'Cannot contain space.',
-                  icon: CheckIcon
+                  icon: CheckIcon,
                 },
                 {
                   message: 'Good news! Username \'notminimay\' is available!',
-                  icon: CheckIcon
-                }
-              ]" />
+                  icon: CheckIcon,
+                },
+              ]"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_b" placeholder="Search with user id" show-label v-model="name"
-              label-text="Co-performer (Optional)" :left-icon="MagnifyingGlassIcon" optionalLabel
-              optionalLabelText=" If this media includes other performers, please tag them below." />
+            <InputComponentDashbaord
+              id="input_b"
+              placeholder="Search with user id"
+              show-label
+              v-model="name"
+              label-text="Co-performer (Optional)"
+              :left-icon="MagnifyingGlassIcon"
+              optionalLabel
+              optionalLabelText=" If this media includes other performers, please tag them below."
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_c" placeholder="Account number in local or IBAN format" show-label
-              v-model="name" label-text="Beneficiary Account" :right-icon="QuestionMarkCircleIcon" />
+            <InputComponentDashbaord
+              id="input_c"
+              placeholder="Account number in local or IBAN format"
+              show-label
+              v-model="name"
+              label-text="Beneficiary Account"
+              :right-icon="QuestionMarkCircleIcon"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_d" placeholder="Enter country" show-label v-model="name"
-              label-text="Country" requiredDisplay="italic-text" requiredDisplayText="Optional" />
+            <InputComponentDashbaord
+              id="input_d"
+              placeholder="Enter country"
+              show-label
+              v-model="name"
+              label-text="Country"
+              requiredDisplay="italic-text"
+              requiredDisplayText="Optional"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_e" type="number" show-label v-model="name" label-text="Merch Discount"
-              rightSpan rightSpanText="% off" />
+            <InputComponentDashbaord
+              id="input_e"
+              type="number"
+              show-label
+              v-model="name"
+              label-text="Merch Discount"
+              rightSpan
+              rightSpanText="% off"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_f" type="number" show-label v-model="name" label-text="Original Price"
-              rightSpan rightSpanText="Token/mo" leftSpan leftSpanText="USD$"
-              description="Price must be between USD$ 1 to 1000." />
+            <InputComponentDashbaord
+              id="input_f"
+              type="number"
+              show-label
+              v-model="name"
+              label-text="Original Price"
+              rightSpan
+              rightSpanText="Token/mo"
+              leftSpan
+              leftSpanText="USD$"
+              description="Price must be between USD$ 1 to 1000."
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <InputComponentDashbaord id="input_g" type="textarea" show-label v-model="name" textAreaRows="3"
-              label-text="Dashboard Textarea" placeholder="Thank you for your tip!" description="0/200 characters" />
+            <InputComponentDashbaord
+              id="input_g"
+              type="textarea"
+              show-label
+              v-model="name"
+              textAreaRows="3"
+              label-text="Dashboard Textarea"
+              placeholder="Thank you for your tip!"
+              description="0/200 characters"
+            />
           </div>
 
           <div class="w-3/4 mb-4">
-            <CheckboxGroup v-model="transferOptions" name="transfer-options" label="Checkbox Options"
-              :options="transferOptionsList" version="dashboard" />
+            <CheckboxGroup
+              v-model="transferOptions"
+              name="transfer-options"
+              label="Checkbox Options"
+              :options="transferOptionsList"
+              version="dashboard"
+            />
           </div>
-
 
           <div class="w-3/4 mb-4">
-            <RadioGroup v-model="transferType" name="subscription" label="Subscription Tier"
-              :options="transferTypeOptions" version="dashboard" />
+            <RadioGroup
+              v-model="transferType"
+              name="subscription"
+              label="Subscription Tier"
+              :options="transferTypeOptions"
+              version="dashboard"
+            />
           </div>
-
 
           <div class="w-3/4 mb-4">
-            <CheckboxSwitch v-model="isChecked" label="Toggle Dark mode" version="dashboard" wrapper-label="Dark Mode"
-              showWrapperLabel />
+            <CheckboxSwitch
+              v-model="isChecked"
+              label="Toggle Dark mode"
+              version="dashboard"
+              wrapper-label="Dark Mode"
+              showWrapperLabel
+            />
           </div>
-
-
         </section>
       </section>
     </div>
@@ -223,50 +389,59 @@
 </template>
 
 <script setup lang="ts">
-import AuthDemo from './AuthDemo.vue'
-import Paragraph from './Components/Form/Paragraph.vue'; import Heading from './Components/Form/Heading.vue';
-import Button from './Components/UI/ButtonComponent.vue';
-import { PaperClipIcon, EnvelopeIcon, EyeIcon, InformationCircleIcon, CheckIcon, MagnifyingGlassIcon, QuestionMarkCircleIcon } from '@heroicons/vue/24/outline';
-import InputDefaultComponent from './Components/input/InputDefaultComponent.vue';
-import Input from './Components/Form/Input.vue';
-import InputComponentDashbaord from './Components/input/InputComponentDashboard.vue';
-import { ref } from 'vue';
-import CheckboxGroup from './Components/Form/CheckboxGroup.vue';
-import RadioGroup from './Components/Form/RadioGroup.vue';
-import CheckboxSwitch from './Components/Form/CheckboxSwitch.vue';
+import AuthDemo from "./AuthDemo.vue";
+import Paragraph from "./Components/Form/Paragraph.vue";
+import Heading from "./Components/Form/Heading.vue";
+import Button from "./Components/UI/ButtonComponent.vue";
+import {
+  PaperClipIcon,
+  EnvelopeIcon,
+  EyeIcon,
+  InformationCircleIcon,
+  CheckIcon,
+  MagnifyingGlassIcon,
+  QuestionMarkCircleIcon,
+} from "@heroicons/vue/24/outline";
+import InputDefaultComponent from "./Components/input/InputDefaultComponent.vue";
+import Input from "./Components/Form/Input.vue";
+import InputComponentDashbaord from "./Components/input/InputComponentDashboard.vue";
+import { ref } from "vue";
+import CheckboxGroup from "./Components/Form/CheckboxGroup.vue";
+import RadioGroup from "./Components/Form/RadioGroup.vue";
+import CheckboxSwitch from "./Components/Form/CheckboxSwitch.vue";
 
-const name = ref('')
-const checkBoxGroup = ref('')
-const isChecked = ref(false)
+const name = ref("");
+const checkBoxGroup = ref("");
+const isChecked = ref(false);
 
-const transferType = ref('subscription')
+const transferType = ref("subscription");
 const transferTypeOptions = [
-  { value: 'choice-a', label: 'Choice A' },
-  { value: 'choice-b', label: 'Choice B' },
-  { value: 'choice-c', label: 'Choice C' }
-]
+  { value: "choice-a", label: "Choice A" },
+  { value: "choice-b", label: "Choice B" },
+  { value: "choice-c", label: "Choice C" },
+];
 
-const transferOptions = ref<string[]>([])
+const transferOptions = ref<string[]>([]);
 const transferOptionsList = [
   {
-    value: 'free-plan',
-    label: 'Free Plan',
-    tags: [{ text: 'Published Tier', variant: 'blue' as const }],
-    version: "dashboard"
+    value: "free-plan",
+    label: "Free Plan",
+    tags: [{ text: "Published Tier", variant: "blue" as const }],
+    version: "dashboard",
   },
   {
-    value: 'free-plan-draft',
-    label: 'Free Plan',
-    tags: [{ text: 'Draft', variant: 'gray' as const }],
-    version: "dashboard"
+    value: "free-plan-draft",
+    label: "Free Plan",
+    tags: [{ text: "Draft", variant: "gray" as const }],
+    version: "dashboard",
   },
   {
-    value: 'verified',
-    label: 'I have verified, preserved and currently hold all identification cards and documents required under Record Keeping Requirements, 18 U.S.C. 2257 and 28 C.F.R. 75, or applicable laws in any other jurisdictions, countries, and territories ("2257 documentation"), for all individuals appearing in the Content.',
-    version: "dashboard"
+    value: "verified",
+    label:
+      'I have verified, preserved and currently hold all identification cards and documents required under Record Keeping Requirements, 18 U.S.C. 2257 and 28 C.F.R. 75, or applicable laws in any other jurisdictions, countries, and territories ("2257 documentation"), for all individuals appearing in the Content.',
+    version: "dashboard",
   },
-]
-
+];
 </script>
 
 <style scoped></style>
