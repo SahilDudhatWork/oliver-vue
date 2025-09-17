@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-white text-text p-2 max-w-7xl mx-auto dark:bg-black">
+  <div class="bg-white text-[#334155] p-2 max-w-7xl mx-auto dark:bg-black">
     <div class="flex flex-col gap-10 dark:bg-black">
       <section class="flex flex-col gap-6">
         <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
@@ -203,9 +203,9 @@
           </div>
         </section>
 
-        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
-          <h1 class="text-2xl font-semibold mb-4">Form components with Dashboard Style</h1>
-          <div class="w-3/4 mb-4">
+        <section class="bg-gray-50 px-8 mx-4 flex flex-col gap-6">
+          <h1 class="text-2xl font-semibold">Form components with Dashboard Style</h1>
+          <div class="w-3/4">
             <InputComponentDashbaord
               id="input_a"
               placeholder="Enter username"
@@ -216,7 +216,7 @@
             />
           </div>
 
-          <div class="w-3/4 mb-4">
+          <div class="w-3/4">
             <InputComponentDashbaord
               id="input_b"
               placeholder="Enter username..."
@@ -247,7 +247,7 @@
             />
           </div>
 
-          <div class="w-3/4 mb-4">
+          <div class="w-3/4">
             <InputComponentDashbaord
               id="input_b"
               placeholder="Enter username..."
@@ -277,7 +277,7 @@
             />
           </div>
 
-          <div class="w-3/4 mb-4">
+          <div class="w-3/4">
             <InputComponentDashbaord
               id="input_b"
               placeholder="Search with user id"

@@ -8,10 +8,7 @@
       </span>
     </label>
 
-    <p
-      class="text-base opacity-70 text-dash-gray-900 dark:text-dark-dash-text"
-      v-if="optionalLabel"
-    >
+    <p class="text-base opacity-70 text-gray-900 dark:text-dark-text" v-if="optionalLabel">
       {{ optionalLabelText }}
     </p>
 
@@ -24,7 +21,7 @@
       <span
         v-if="leftSpan"
         :class="leftSpanClass"
-        class="text-base font-bold text-dash-gray-700 dark:text-dark-dash-text whitespace-nowrap"
+        class="text-base font-bold text-gray-700 dark:text-dark-text whitespace-nowrap"
         >{{ leftSpanText }}</span
       >
 
@@ -35,7 +32,7 @@
         :type="type"
         v-if="type !== 'textarea'"
         @input="$emit('update:modelValue', ($event.target as HTMLInputElement).value)"
-        :class="[leftIcon ? 'pl-1' : 'pl-2', rightIcon ? 'pr-1' : 'pr-2']"
+        :class="[leftIcon ? 'pl-1' : 'pl-1', rightIcon ? 'pr-1' : 'pr-1']"
       />
 
       <textarea
@@ -52,7 +49,7 @@
       <span
         v-if="rightSpan"
         :class="rightSpanClass"
-        class="text-base font-medium px-3 text-dash-gray-700 dark:text-dark-dash-text whitespace-nowrap"
+        class="text-base font-medium px-3 text-gray-700 dark:text-dark-text whitespace-nowrap"
         >{{ rightSpanText }}</span
       >
     </div>
@@ -65,7 +62,7 @@
     <!-- required-error-text -->
     <span
       v-if="requiredDisplay === 'required-text-error'"
-      class="inline-flex items-center text-xs leading-loose text-[#ff4405] dark:text-dark-dash-warning"
+      class="inline-flex items-center text-xs leading-loose text-[#ff4405] dark:text-dark-warning"
       >This field is required.</span
     >
 
@@ -75,16 +72,14 @@
         <li
           v-for="(errorObj, index) in errors"
           :key="index"
-          class="flex w-full gap-[.4375rem] text-[#ff4405] dark:text-dark-dash-warning"
+          class="flex w-full gap-[.4375rem] text-[#ff4405] dark:text-dark-warning"
         >
           <component
             v-if="errorObj.icon"
             :is="errorObj.icon"
-            class="block w-[1.125rem] h-[1.125rem] md:w-[1.25rem] md:h-[1.25rem] text-[#07f468]Light dark:text-dark-dash-successLight"
+            class="block w-[1.125rem] h-[1.125rem] md:w-[1.25rem] md:h-[1.25rem] text-[#07f468]Light dark:text-dark-successLight"
           />
-          <span class="text-sm text-[#ff4405] dark:text-dark-dash-warning">{{
-            errorObj.error
-          }}</span>
+          <span class="text-sm text-[#ff4405] dark:text-dark-warning">{{ errorObj.error }}</span>
         </li>
       </ul>
     </div>
@@ -95,14 +90,14 @@
         <li
           v-for="(successObj, index) in success"
           :key="index"
-          class="flex w-full gap-[.4375rem] text-[#07f468] dark:text-dark-dash-success"
+          class="flex w-full gap-[.4375rem] text-[#07f468] dark:text-dark-success"
         >
           <component
             v-if="successObj.icon"
             :is="successObj.icon"
-            class="block w-[1.125rem] h-[1.125rem] md:w-[1.25rem] md:h-[1.25rem] text-[#07f468]Light dark:text-dark-dash-successLight"
+            class="block w-[1.125rem] h-[1.125rem] md:w-[1.25rem] md:h-[1.25rem] text-[#07f468]Light dark:text-dark-successLight"
           />
-          <span class="text-sm text-[#07f468] dark:text-dark-dash-success">{{
+          <span class="text-sm text-[#07f468] dark:text-dark-success">{{
             successObj.message
           }}</span>
         </li>
@@ -198,16 +193,16 @@ const inputConfig = {
       targetAttribute: "wrapper3",
       addClass:
         props.type === "textarea"
-          ? "w-full px-3.5 py-2.5 h-[5.5rem] border-b border-dash-gray-300 dark:border-dark-dash-border rounded-dash-input rounded-b-none shadow-dash-input dark:shadow-dark-dash-input bg-white/50 dark:bg-dark-dash-bg-light"
-          : "flex items-center px-3 py-2 h-10 border-b border-dash-gray-300 dark:border-dark-dash-border rounded-dash-input shadow-dash-input dark:shadow-dark-dash-input bg-white/50 dark:bg-dark-dash-bg-light gap-2",
+          ? "w-full px-3.5 py-2.5 h-[5.5rem] border-b border-gray-300 dark:border-dark-border rounded-input rounded-b-none shadow-input dark:shadow-dark-input bg-white/50 dark:bg-dark-bg-light"
+          : "flex items-center px-3 py-2 h-10 border-b border-gray-300 dark:border-dark-border rounded-input shadow-input dark:shadow-dark-input bg-white/50 dark:bg-dark-bg-light gap-2",
       addAttributes: { "data-wrapper": "wrapper3" },
     },
   ],
   elm: {
     addClass:
       props.type === "textarea"
-        ? "w-full text-base font-normal text-dash-gray-900 dark:text-dark-dash-text bg-transparent border-none focus:outline-none placeholder-dash-gray-500 dark:placeholder-dark-dash-text placeholder:text-base placeholder:leading-6 placeholder:font-normal"
-        : "flex-1 text-base font-normal text-dash-gray-900 dark:text-dark-dash-text bg-transparent border-none focus:outline-none placeholder-dash-gray-500 dark:placeholder-dark-dash-text placeholder:text-base placeholder:leading-6 placeholder:font-normal",
+        ? "w-full text-base font-normal text-gray-900 dark:text-dark-text bg-transparent border-none focus:outline-none placeholder-gray-500 dark:placeholder-dark-text placeholder:text-base placeholder:leading-6 placeholder:font-normal"
+        : "flex-1 text-base font-normal text-gray-900 dark:text-dark-text bg-transparent border-none focus:outline-none placeholder-gray-500 dark:placeholder-dark-text placeholder:text-base placeholder:leading-6 placeholder:font-normal",
     addAttributes: {
       type: props.type === "textarea" ? "textarea" : "text",
     },
@@ -216,14 +211,14 @@ const inputConfig = {
     label: {
       addClass:
         props.requiredDisplay === "italic-text"
-          ? "flex items-center justify-between block text-sm font-medium text-dash-gray-900 dark:text-dark-dash-text italic"
-          : "block text-sm font-medium text-dash-gray-900 dark:text-dark-dash-text",
+          ? "flex items-center justify-between block text-sm font-bold text-gray-900 dark:text-dark-text font-Montserrat italic"
+          : "block text-sm font-bold text-gray-900 dark:text-dark-text font-Montserrat",
       addAttributes: {
         for: "input-id",
       },
     },
     description: {
-      addClass: "text-sm text-dash-gray-600 dark:text-dark-dash-text",
+      addClass: "text-sm text-gray-600 dark:text-dark-text",
       addAttributes: {
         "data-description": "true",
       },
