@@ -3,14 +3,23 @@
     <label v-if="showLabel" v-bind="resolvedAttrs.labelAttrs">
       {{ labelText }}
       <span v-if="requiredDisplay === '*'" class="text-red-500">*</span>
-      <span v-else-if="requiredDisplay === 'italic-text'" class="italic text-xs text-gray-500">
-        {{ requiredDisplayText }}
-      </span>
+      <Paragraph
+        v-else-if="requiredDisplay === 'italic-text'"
+        :text="requiredDisplayText"
+        fontSize="text-xs"
+        fontColor="text-gray-500"
+        fontFamily="italic"
+      />
     </label>
 
-    <p class="text-base opacity-70 text-gray-900 dark:text-dark-text" v-if="optionalLabel">
-      {{ optionalLabelText }}
-    </p>
+    <Paragraph
+      v-if="optionalLabel"
+      :text="optionalLabelText"
+      fontSize="text-base"
+      fontWeight="font-normal"
+      fontColor="text-gray-900 dark:text-dark-text"
+      shadow="opacity-70"
+    />
 
     <!-- Input -->
     <div v-bind="resolvedAttrs.wrapperAttrs.wrapper3">
@@ -18,12 +27,16 @@
       <component v-if="leftIcon" :is="leftIcon" class="w-5 h-5" />
 
       <!-- left span -->
-      <span
+
+      <Paragraph
         v-if="leftSpan"
+        :text="leftSpanText"
         :class="leftSpanClass"
-        class="text-base font-bold text-gray-700 dark:text-dark-text whitespace-nowrap"
-        >{{ leftSpanText }}</span
-      >
+        fontSize="text-base"
+        fontWeight="font-bold"
+        fontColor="text-gray-700 dark:text-dark-text"
+        layoutClass="whitespace-nowrap"
+      />
 
       <input
         v-bind="resolvedAttrs.inputAttrs"
@@ -46,30 +59,39 @@
       <component v-if="rightIcon" :is="rightIcon" class="w-5 h-5" />
 
       <!-- right span -->
-      <span
+      <Paragraph
         v-if="rightSpan"
+        :text="rightSpanText"
         :class="rightSpanClass"
-        class="text-base font-medium px-3 text-gray-700 dark:text-dark-text whitespace-nowrap"
-        >{{ rightSpanText }}</span
-      >
+        fontSize="text-base"
+        fontWeight="font-medium"
+        fontColor="text-gray-700 dark:text-dark-text"
+        layoutClass="px-3 whitespace-nowrap"
+      />
     </div>
 
     <!-- Description -->
-    <p v-if="description" v-bind="resolvedAttrs.descriptionAttrs">
-      {{ description }}
-    </p>
+
+    <Paragraph
+      v-if="description"
+      :text="description"
+      fontSize="text-sm"
+      fontColor="text-[#475467] dark:text-dark-text"
+    />
 
     <!-- required-error-text -->
-    <span
+    <Paragraph
       v-if="requiredDisplay === 'required-text-error'"
-      class="inline-flex items-center text-xs leading-loose text-[#FF4405] dark:text-dark-warning"
-      >This field is required.</span
-    >
+      text="This field is required."
+      fontSize="text-xs"
+      fontColor="text-[#FF4405] dark:text-dark-warning"
+      layoutClass="inline-flex items-center leading-loose"
+    />
 
     <!-- error-fields-container -->
     <div class="flex flex-col items-start self-stretch gap-1 px-2 pt-1 pb-2" v-if="showErrors">
-      <ul class="flex flex-col gap-1">
-        <li
+      <div class="flex flex-col gap-1">
+        <div
           v-for="(errorObj, index) in errors"
           :key="index"
           class="flex w-full gap-[.4375rem] dark:text-dark-warning"
@@ -87,23 +109,23 @@
                 : 'text-[#FF4405] dark:text-dark-warning'
             "
           />
-          <span
-            class="text-sm dark:text-dark-warning"
-            :class="
+          <Paragraph
+            :text="errorObj.error"
+            fontSize="text-sm"
+            :fontColor="
               index === errors.length - 1
                 ? 'text-[#FF7C1E]'
                 : 'text-[#FF4405] dark:text-dark-warning'
             "
-            >{{ errorObj.error }}</span
-          >
-        </li>
-      </ul>
+          />
+        </div>
+      </div>
     </div>
 
     <!-- success-fields-container -->
     <div class="flex flex-col items-start self-stretch gap-1 px-2 pt-1 pb-2" v-if="onSuccess">
-      <ul class="flex flex-col gap-1">
-        <li
+      <div class="flex flex-col gap-1">
+        <div
           v-for="(successObj, index) in success"
           :key="index"
           class="flex w-full gap-[.4375rem] text-[#07f468] dark:text-dark-success"
@@ -113,11 +135,13 @@
             :is="successObj.icon"
             class="block w-[1.125rem] h-[1.125rem] md:w-[1.25rem] md:h-[1.25rem] text-[#07f468]Light dark:text-dark-successLight"
           />
-          <span class="text-sm text-[#07f468] dark:text-dark-success">{{
-            successObj.message
-          }}</span>
-        </li>
-      </ul>
+          <Paragraph
+            :text="successObj.message"
+            fontSize="text-sm"
+            fontColor="text-[#07f468] dark:text-dark-success"
+          />
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -125,6 +149,7 @@
 <script setup lang="ts">
 import { computed, type Component } from "vue";
 import { resolveAllConfigs } from "@/utils/componentRenderingUtils";
+import Paragraph from "../default/Paragraph.vue";
 
 const props = defineProps({
   modelValue: [String, Number],
@@ -227,8 +252,8 @@ const inputConfig = {
     label: {
       addClass:
         props.requiredDisplay === "italic-text"
-          ? "flex items-center justify-between block text-sm font-bold text-[#101828] dark:text-dark-text font-Montserrat italic"
-          : "block text-sm font-bold text-[#101828] dark:text-dark-text font-Montserrat",
+          ? "flex items-center justify-between block text-sm font-medium text-[#101828] dark:text-dark-text italic"
+          : "block text-sm font-medium text-[#101828] dark:text-dark-text",
       addAttributes: {
         for: "input-id",
       },

@@ -5,18 +5,22 @@
 */
 
 @font-face {
-  font-family: 'Poppins';
-  src: url('./Poppins-Regular.ttf') format('truetype');
+  /* font-family: "Poppins"; */
+  src: url("./Poppins-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: 'Montserrat';
-  src: url('./Montserrat-Regular.ttf') format('truetype');
+  /* font-family: "Montserrat"; */
+  src: url("./Montserrat-Regular.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
+}
+
+html {
+  font-family: "Poppins", "Inter", "Montserrat", "Open Sans", Arial, sans-serif;
 }
 
 *,
@@ -35,13 +39,13 @@
 4. Use the user's configured `sans` font-family by default.
 */
 
-html,body {
+html,
+body {
   line-height: 1.5; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
   -moz-tab-size: 4; /* 3 */
   tab-size: 4; /* 3 */
-  font-family:
-  Poppins, Inter, Montserrat, Open Sans, arial, sans-serif; /* 4 */
+  font-family: Poppins, Inter, Montserrat, "Open Sans", Arial, sans-serif; /* 4 */
   font-weight: 400;
 }
 
@@ -116,8 +120,9 @@ code,
 kbd,
 samp,
 pre {
-  font-family:
-    ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace; /* 1 */
+  /* font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+    "Courier New", monospace; */
+  /* 1 */
   font-size: 1em; /* 2 */
 }
 
@@ -172,7 +177,8 @@ input,
 optgroup,
 select,
 textarea {
-  font-family: inherit; /* 1 */
+  /* font-family: inherit; */
+  /* 1 */
   font-feature-settings: inherit; /* 1 */
   font-variation-settings: inherit; /* 1 */
   font-size: 100%; /* 1 */
@@ -198,9 +204,9 @@ select {
 */
 
 button,
-[type='button'],
-[type='reset'],
-[type='submit'] {
+[type="button"],
+[type="reset"],
+[type="submit"] {
   -webkit-appearance: button; /* 1 */
   /* background-color: transparent;  */
   background-image: none; /* 2 */
@@ -244,7 +250,7 @@ Correct the cursor style of increment and decrement buttons in Safari.
 2. Correct the outline style in Safari.
 */
 
-[type='search'] {
+[type="search"] {
   -webkit-appearance: textfield; /* 1 */
   outline-offset: -2px; /* 2 */
 }
@@ -336,7 +342,7 @@ Set the default cursor for buttons.
 */
 
 button,
-[role='button'] {
+[role="button"] {
   cursor: pointer;
 }
 
@@ -379,6 +385,6 @@ video {
 [hidden] {
   display: none;
 }
-.font-Montserrat{
+/* .font-Montserrat{
       font-family: 'Montserrat';
-}
+} */

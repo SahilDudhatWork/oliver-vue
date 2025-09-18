@@ -26,6 +26,25 @@
               font-color="text-blue-800 dark:text-gray-200"
             />
           </div>
+          <div>
+            <Paragraph
+              text="This is paragraph component with icon size (10 X 10) & spacing"
+              font-size="text-sm"
+              font-weight="font-normal"
+              font-color="text-blue-800 dark:text-gray-200"
+              :left-icon="PaperClipIcon"
+              :iconSize="'w-10 h-10'"
+            />
+          </div>
+          <div>
+            <Paragraph
+              text="This is paragraph component with WEBP"
+              font-size="text-sm"
+              font-weight="font-normal"
+              font-color="text-blue-800 dark:text-gray-200"
+              :left-icon="greentick"
+            />
+          </div>
         </section>
         <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Heading demo component</h1>
@@ -41,6 +60,15 @@
           <div>
             <Heading text="This is a Section h1 heading" tag="h1" theme="sectionHeading" />
           </div>
+          <div>
+            <Heading
+              :leftIcon="PaperClipIcon"
+              :iconSpacing="'mr-5 inline-block'"
+              text="This is a heading with icon (size,spacing)"
+              tag="h2"
+              theme="defaultSecondaryHeading"
+            />
+          </div>
         </section>
         <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Button demo component</h1>
@@ -50,6 +78,27 @@
             <Button text="With Icon" :left-icon="PaperClipIcon" variant="secondary" size="md" />
           </div>
           <div><Button text="More Info" variant="outline" size="md" /></div>
+          <div>
+            <h3>Buttons with Icons</h3>
+            <div class="button-group">
+              <Button text="Confirm" variant="success" :leftIcon="CheckIcon" />
+              <Button text="Next" variant="danger" :rightIcon="PaperClipIcon" />
+              <Button
+                text="Settings"
+                variant="secondary"
+                :leftIcon="PaperClipIcon"
+                :rightIcon="CheckIcon"
+              />
+            </div>
+          </div>
+          <div>
+            <h3>Other Variants</h3>
+            <div class="button-group">
+              <Button text="Warning" variant="warning" size="lg" />
+              <Button text="Outline" variant="outline" size="md" />
+              <Button text="Disabled" variant="danger" :disabled="true" />
+            </div>
+          </div>
         </section>
 
         <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
@@ -390,8 +439,8 @@
 
 <script setup lang="ts">
 import AuthDemo from "./AuthDemo.vue";
-import Paragraph from "./Components/Form/Paragraph.vue";
-import Heading from "./Components/Form/Heading.vue";
+import Paragraph from "./Components/default/Paragraph.vue";
+import Heading from "./Components/default/Heading.vue";
 import Button from "./Components/UI/ButtonComponent.vue";
 import {
   PaperClipIcon,
@@ -410,6 +459,7 @@ import { ref } from "vue";
 import CheckboxGroup from "./Components/Form/CheckboxGroup.vue";
 import RadioGroup from "./Components/Form/RadioGroup.vue";
 import CheckboxSwitch from "./Components/Form/CheckboxSwitch.vue";
+import greentick from "@/assets/images/greentick.webp";
 
 const name = ref("");
 const checkBoxGroup = ref("");
