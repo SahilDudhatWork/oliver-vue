@@ -203,7 +203,7 @@
           </div>
         </section>
 
-        <section class="bg-gray-50 px-8 mx-4 flex flex-col gap-6">
+        <section class="bg-gray-50 px-6 mx-4 flex flex-col gap-6">
           <h1 class="text-2xl font-semibold">Form components with Dashboard Style</h1>
           <div class="w-3/4">
             <InputComponentDashbaord
@@ -271,7 +271,7 @@
                 },
                 {
                   message: 'Good news! Username \'notminimay\' is available!',
-                  icon: CheckIcon,
+                  icon: CheckCircleIcon,
                 },
               ]"
             />
@@ -402,6 +402,7 @@ import {
   MagnifyingGlassIcon,
   QuestionMarkCircleIcon,
 } from "@heroicons/vue/24/outline";
+import { CheckCircleIcon } from "@heroicons/vue/24/solid";
 import InputDefaultComponent from "./Components/input/InputDefaultComponent.vue";
 import Input from "./Components/Form/Input.vue";
 import InputComponentDashbaord from "./Components/input/InputComponentDashboard.vue";
