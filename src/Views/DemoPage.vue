@@ -703,7 +703,6 @@
                 :id="`feature-${option.value}`"
                 :value="option.value"
                 :label="option.label"
-                :description="option.description"
                 :tags="option.tags"
               />
             </InputComponentCheckbox>
@@ -721,7 +720,6 @@
                 :id="`plan-${option.value}`"
                 :value="option.value"
                 :label="option.label"
-                :description="option.description"
               />
             </InputComponentCheckbox>
           </div>
