@@ -159,6 +159,177 @@
           />
         </section>
 
+        <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-4">
+          <h1 class="text-3xl font-bold mb-4">Dashboard Buttons demo (CSS-first)</h1>
+
+          <!-- Reusable TwoPieceButton Variants Showcase -->
+          <div class="flex flex-col gap-3 mt-4">
+            <!-- Variant: skew-right (uses built-in defaults) -->
+            <TwoPieceButton
+              :tag="'button'"
+              variant="skew-right"
+              :text="'Link your X account (variant=skew-right)'"
+              :textClass="'py-1 break-words leading-7 text-lg text-black font-medium flex group-hover:text-dash-success'"
+              :dataAttrs="{ 'data-green-skew-right-bottom-button': true }"
+            >
+              <template #icon>
+                <!-- X icon -->
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  class="w-6 h-6"
+                >
+                  <g id="social media icon/X">
+                    <g id="Vector">
+                      <mask id="path-1-inside-1_8797_16211" fill="white">
+                        <path
+                          d="M13.7142 10.6226L20.4163 3H18.8287L13.0068 9.61729L8.36042 3H3L10.0278 13.0075L3 21H4.58761L10.7316 14.0104L15.6396 21H21.0001M5.16061 4.17142H7.59962L18.8275 19.8861H16.3878"
+                        />
+                      </mask>
+                      <path
+                        d="M13.7142 10.6226L20.4163 3H18.8287L13.0068 9.61729L8.36042 3H3L10.0278 13.0075L3 21H4.58761L10.7316 14.0104L15.6396 21H21.0001M5.16061 4.17142H7.59962L18.8275 19.8861H16.3878"
+                        fill="black"
+                        class="group-hover:fill-dash-success"
+                      />
+                      <path
+                        d="M20.4163 3L21.1673 3.6603L22.627 2H20.4163V3ZM18.8287 3V2H18.3765L18.0779 2.33946L18.8287 3ZM13.0068 9.61729L12.1884 10.1919L12.9185 11.2316L13.7576 10.2778L13.0068 9.61729ZM8.36042 3L9.17882 2.42535L8.88015 2H8.36042V3ZM3 3V2H1.07579L2.18164 3.5747L3 3ZM10.0278 13.0075L10.7788 13.6678L11.2985 13.0768L10.8462 12.4328L10.0278 13.0075ZM3 21L2.24902 20.3397L0.7891 22H3V21ZM4.58761 21V22H5.04L5.33868 21.6602L4.58761 21ZM10.7316 14.0104L11.55 13.4358L10.8196 12.3956L9.98055 13.3502L10.7316 14.0104ZM15.6396 21L14.8213 21.5747L15.1199 22H15.6396V21ZM7.59962 4.17142L8.41327 3.59008L8.11415 3.17142H7.59962V4.17142ZM18.8275 19.8861V20.8861H20.7709L19.6411 19.3048L18.8275 19.8861ZM14.4652 11.2829L21.1673 3.6603L19.6653 2.3397L12.9632 9.96235L14.4652 11.2829ZM20.4163 2H18.8287V4H20.4163V2ZM18.0779 2.33946L12.256 8.95675L13.7576 10.2778L19.5794 3.66054L18.0779 2.33946ZM13.8252 9.04264L9.17882 2.42535L7.54202 3.57465L12.1884 10.1919L13.8252 9.04264ZM8.36042 2H3V4H8.36042V2ZM2.18164 3.5747L9.20946 13.5822L10.8462 12.4328L3.81836 2.4253L2.18164 3.5747ZM9.27685 12.3471L2.24902 20.3397L3.75098 21.6603L10.7788 13.6678L9.27685 12.3471ZM3 22H4.58761V20H3V22ZM5.33868 21.6602L11.4827 14.6706L9.98055 13.3502L3.83653 20.3398L5.33868 21.6602ZM9.91324 14.5851L14.8213 21.5747L16.458 20.4253L11.55 13.4358L9.91324 14.5851ZM15.6396 22H21.0001V20H15.6396V22ZM5.16061 5.17142H7.59962V3.17142H5.16061V5.17142ZM6.78596 4.75277L18.0138 20.4675L19.6411 19.3048L8.41327 3.59008L6.78596 4.75277ZM18.8275 18.8861H16.3878V20.8861H18.8275V18.8861Z"
+                        fill="black"
+                        mask="url(#path-1-inside-1_8797_16211)"
+                        class="group-hover:fill-dash-success"
+                      />
+                    </g>
+                  </g>
+                </svg>
+              </template>
+            </TwoPieceButton>
+
+            <!-- Variant: two-piece (legacy) minimal example -->
+            <TwoPieceButton
+              :tag="'a'"
+              href="#"
+              variant="two-piece"
+              :text="'Two-piece minimal example'"
+              :skewPosition="'right'"
+              :rootClass="'group flex w-max self-stretch no-underline'"
+              :mainClass="'px-3 h-10 flex items-center bg-black shadow-[4px_4px_0_0_#fb5ba2] transition-all duration-150 ease-in-out group-hover:bg-[#07f468] group-hover:shadow-[4px_4px_0_0_#000]'"
+              :skewClass="'relative -skew-x-[20deg] -translate-x-[0.438rem] h-10 w-4 bg-black shadow-[4px_4px_0_0_#fb5ba2] transition-all duration-150 ease-in-out group-hover:bg-[#07f468] group-hover:shadow-[4px_4px_0_0_#000]'"
+              :textClass="'font-medium text-base leading-7 text-white transition-all duration-150 ease-in-out group-hover:text-black'"
+            />
+          </div>
+
+          <!-- Save & Cancel Buttons -->
+          <div class="flex items-center gap-2">
+            <ButtonBase
+              :text="'Cancel'"
+              :rootClass="'py-1 px-2 min-w-[6.25rem] text-lg font-medium flex justify-center items-center hover:bg-white'"
+              :textClass="'text-[#0c111d] break-words leading-7 text-lg font-medium uppercase'"
+            />
+            <ButtonBase
+              :text="'Save'"
+              :rootClass="'group py-1 px-2 gap-2.5 min-w-[5.3125rem] bg-black flex justify-center items-center hover:bg-dash-success'"
+              :textClass="'text-[#07f468] break-words leading-7 text-lg font-medium uppercase group-hover:text-black'"
+            />
+          </div>
+
+          <!-- View Profile & Go Live layout -->
+          <div class="flex item s-center self-stretch gap-4">
+            <!-- Left: dotted + view profile -->
+            <div class="flex-1 self-stretch flex items-center gap-2">
+              <ButtonBase
+                :rootClass="'bg-black shadow-[4px_4px_0_0_#fb5ba2] h-10 w-10 relative flex justify-center items-center cursor-pointer transition-all duration-150 ease-in-out hover:bg-[#07f468] hover:shadow-[4px_4px_0_0_#000]'"
+              >
+                <template #icon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="pointer-events-none transition-all duration-150 ease-in-out h-6 w-6"
+                  >
+                    <g id="dots-vertical">
+                      <g id="Icon">
+                        <path
+                          d="M12 13C12.5523 13 13 12.5523 13 12C13 11.4477 12.5523 11 12 11C11.4477 11 11 11.4477 11 12C11 12.5523 11.4477 13 12 13Z"
+                          stroke="#FB5BA2"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 6C12.5523 6 13 5.55228 13 5C13 4.44772 12.5523 4 12 4C11.4477 4 11 4.44772 11 5C11 5.55228 11.4477 6 12 6Z"
+                          stroke="#FB5BA2"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M12 20C12.5523 20 13 19.5523 13 19C13 18.4477 12.5523 18 12 18C11.4477 18 11 18.4477 11 19C11 19.5523 11.4477 20 12 20Z"
+                          stroke="#FB5BA2"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </g>
+                    </g>
+                  </svg>
+                </template>
+              </ButtonBase>
+
+              <TwoPieceButton
+                :tag="'a'"
+                href="#"
+                :text="'View Profile'"
+                :skewPosition="'right'"
+                :rootClass="'group flex-1 self-stretch no-underline'"
+                :mainClass="'w-full gap-2.5 h-10 px-2 py-1 flex justify-center self-stretch items-center bg-black shadow-[4px_4px_0_0_#fb5ba2] transition-all duration-150 ease-in-out group-hover:bg-[#07f468] group-hover:shadow-[4px_4px_0_0_#000]'"
+                :skewClass="'relative -skew-x-[20deg] -translate-x-[0.438rem] h-10 p-1 w-4 flex justify-center items-center bg-black shadow-[4px_4px_0_0_#fb5ba2] transition-all duration-150 ease-in-out group-hover:bg-[#07f468] group-hover:shadow-[4px_4px_0_0_#000]'"
+                :textClass="'font-medium text-lg leading-7 text-white transition-all duration-150 ease-in-out group-hover:text-black'"
+              />
+            </div>
+
+            <!-- Right: go live disabled -->
+            <div class="flex-1 self-stretch flex items-center">
+              <TwoPieceButton
+                :tag="'a'"
+                href="#"
+                :text="'Go Live'"
+                :skewPosition="'left'"
+                :rootClass="'no-underline cursor-default h-10 flex-1 relative flex justify-center items-center self-center'"
+                :skewClass="'[filter:grayscale(100%)] shadow-[4px_4px_0_0_#636363] bg-[#9f9f9f] -skew-x-[20deg] translate-x-[0.563rem] h-10 p-1 w-4 flex justify-center items-center transition-all duration-150 ease-in-out'"
+                :mainClass="'[filter:grayscale(100%)] shadow-[4px_4px_0_0_#636363] bg-[#9f9f9f] relative transition-all duration-150 ease-in-out cursor-default flex-1 gap-2.5 h-10 p-1 flex justify-center items-center self-stretch'"
+                :textClass="'leading-7 text-lg text-black font-medium'"
+              >
+                <template #rightIcon>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    class="w-6 h-6 [filter:brightness(0)_saturate(100%)_invert(55%)_sepia(10%)_saturate(5098%)_hue-rotate(296deg)_brightness(98%)_contrast(101%)] transition-all duration-150 ease-in-out"
+                  >
+                    <g clip-path="url(#clip0_1177_37360)">
+                      <path
+                        d="M9.77811 6.63604C9.22582 6.63604 8.77811 6.18832 8.77811 5.63604C8.77811 5.08376 9.22583 4.63604 9.77811 4.63604L18.2634 4.63605C18.5395 4.63605 18.7895 4.74798 18.9705 4.92895C19.0664 5.02482 19.1387 5.13532 19.1875 5.25327C19.2364 5.37117 19.2634 5.50046 19.2634 5.63605L19.2634 14.1213C19.2634 14.6736 18.8157 15.1213 18.2634 15.1213C17.7111 15.1213 17.2634 14.6736 17.2634 14.1213L17.2634 8.05026L6.24256 19.0711C5.85204 19.4616 5.21887 19.4616 4.82835 19.0711C4.43782 18.6806 4.43782 18.0474 4.82835 17.6569L15.8492 6.63605L9.77811 6.63604Z"
+                        fill="#303437"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1177_37360">
+                        <rect width="24" height="24" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </template>
+              </TwoPieceButton>
+            </div>
+          </div>
+        </section>
+
         <section class="bg-gray-50 p-8 shadow-md mx-4 flex flex-col gap-2">
           <h1 class="text-3xl font-bold mb-4">Default demo components in single Input</h1>
           <div>
@@ -730,12 +901,24 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
 import AuthDemo from "./AuthDemo.vue";
 import Paragraph from "./Components/default/Paragraph.vue";
 import Heading from "./Components/default/Heading.vue";
 import Button from "./Components/UI/ButtonComponent.vue";
+import InputDefaultComponent from "./Components/input/InputDefaultComponent.vue";
+import Input from "./Components/Form/Input.vue";
+import InputComponentDashbaord from "./Components/input/InputComponentDashboard.vue";
+import CheckboxGroup from "./Components/Form/CheckboxGroup.vue";
+import RadioGroup from "./Components/Form/RadioGroup.vue";
+import CheckboxSwitch from "./Components/Form/CheckboxSwitch.vue";
 import InputComponentCheckbox from "./Components/Form/InputComponentCheckbox.vue";
 import CheckboxOption from "./Components/Form/CheckboxOption.vue";
+import NotificationCard from "./Components/UI/Card/Dashboard/Notification/NotificationCard.vue";
+import SubscriptionCard from "./Components/UI/Card/SubscriptionCard.vue";
+import ButtonBase from "@/components/ui/button/dashboard/ButtonBase.vue";
+import TwoPieceButton from "@/components/ui/button/dashboard/TwoPieceButton.vue";
+import greentick from "@/assets/images/greentick.webp";
 import {
   PaperClipIcon,
   EnvelopeIcon,
@@ -744,21 +927,10 @@ import {
   CheckIcon,
   MagnifyingGlassIcon,
   QuestionMarkCircleIcon,
-  ExclamationTriangleIcon,
 } from "@heroicons/vue/24/outline";
-import { CheckCircleIcon } from "@heroicons/vue/24/solid";
-import InputDefaultComponent from "./Components/input/InputDefaultComponent.vue";
-import Input from "./Components/Form/Input.vue";
-import InputComponentDashbaord from "./Components/input/InputComponentDashboard.vue";
-import { ref } from "vue";
-import CheckboxGroup from "./Components/Form/CheckboxGroup.vue";
-import RadioGroup from "./Components/Form/RadioGroup.vue";
-import CheckboxSwitch from "./Components/Form/CheckboxSwitch.vue";
-import greentick from "@/assets/images/greentick.webp";
-import NotificationCard from "./Components/UI/Card/Dashboard/Notification/NotificationCard.vue";
-import SubscriptionCard from "./Components/UI/Card/SubscriptionCard.vue";
-//import SubscriptionCardExample from "./Components/UI/Card/SubscriptionCardExample.vue";
+import { CheckCircleIcon, ExclamationTriangleIcon } from "@heroicons/vue/24/solid";
 
+// Basic refs
 const name = ref("");
 const checkBoxGroup = ref("");
 const isChecked = ref(false);
@@ -806,7 +978,6 @@ const featureOptions = [
   {
     value: "free-plan-again",
     label: "Free Plan",
-
     tags: [{ text: "Draft", variant: "" }],
   },
   {
@@ -822,7 +993,7 @@ const planOptions = [
   { value: "Choice-c", label: "Choice C" },
 ];
 
-// Handle subscription card actions
+// Handlers
 const handleSubscribe = (tier: string) => {
   console.log(`Subscribing to ${tier} tier`);
   alert(`You clicked subscribe for ${tier} tier!`);
